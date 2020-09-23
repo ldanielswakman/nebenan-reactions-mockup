@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #e1e1de;
+    min-height: 100vh;
+    font-family: "Open Sans";
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 367px;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.card__header {
+    min-height: 40px;
+    padding: 8px;
+    background: #F8F8F6;
+    border-bottom: 1px solid #e1e1de;
+}
+.card__author {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 8px;
+    border-bottom: 1px solid #e1e1de;
+}
+.card__content {
+    padding: 16px 8px;
+}
+.card__footer {
+    min-height: 56px;
+    padding: 8px;
+    border-top: 1px solid #e1e1de;
+}
+
+
+
+.image-placeholder {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #e4e9e7;
+}
+.text-line {
+    display: block;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: #E4E9E7;
+}
+
+
+.button--danke {
+    padding: 6px 8px;
+}
+.button--danke:hover {
+    cursor: pointer;
+}
+.button--danke svg {
+    fill: #799189;
+}
+.button--danke:hover svg {
+    fill: #575757;
+}
