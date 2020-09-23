@@ -67,8 +67,9 @@ body {
     background: #E4E9E7;
 }
 
-
+/* Buttons */
 .button--danke {
+    position: relative;
     padding: 6px 8px;
 }
 .button--danke:hover {
@@ -77,6 +78,137 @@ body {
 .button--danke svg {
     fill: #799189;
 }
-.button--danke:hover svg {
+.button--danke:hover > svg {
     fill: #575757;
+}
+
+
+/* Reaction popup */
+.reaction-popup {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: flex-end;
+    padding: 8px;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.25);
+    transform-origin: bottom left;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 0, 0.5, 1);
+    transition-delay: 0.2s;
+}
+.button--danke:not(.is-active):hover .reaction-popup {
+    transform: scale(0.5);
+    max-width: 56px;
+    bottom: calc(100% + 18px);
+    opacity: 1;
+}
+.button--danke.is-active .reaction-popup {
+    max-width: 212px;
+    bottom: calc(100% + 18px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    left: 0;
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0.25, 0, 0.5, 1);
+    opacity: 1;
+}
+
+.reaction {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #F1F4F3;
+    transition: all 0.2s cubic-bezier(0, 0, 0.5, 1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+/* .reaction:nth-child(1) { transition-delay: 0.2s; }
+.reaction:nth-child(2) { transition-delay: 0.4s; }
+.reaction:nth-child(3) { transition-delay: 0.6s; }
+.reaction:nth-child(4) { transition-delay: 0.8s; } */
+
+.button--danke.is-active .reaction-popup .reaction {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0;
+}
+.reaction + .reaction { margin-left: 12px; }
+
+.reaction:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+}
+
+.reaction svg {
+    width: 60%;
+    height: 60%;
+    transition: all 0.2s ease-in-out;
+}
+.reaction--danke svg {
+    fill: #B2CA06;
+}
+.reaction--fantastisch svg {
+    fill: #EB5E65;
+}
+.reaction--bravo svg {
+    fill: #0090A1;
+}
+.reaction--guteidee svg {
+    fill: #EE9E2D;
+}
+
+.reaction-popup:hover .reaction {
+    width: 32px;
+    height: 32px;
+}
+/* .reaction-popup:hover .reaction svg {
+    width: 20px;
+    height: 20px;
+} */
+.reaction-popup .reaction:hover {
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+.reaction-popup .reaction:active {
+    margin-top: -50px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #D6DEDB;
+}
+/* .reaction-popup .reaction:hover svg {
+    width: 40px;
+    height: 40px;
+} */
+
+.reaction label {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    display: inline-block;
+    padding: 2px 10px;
+    background-color: rgba(97,116, 110, 0.8);
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    font-weight: semibold;
+    white-space: nowrap;
+    opacity: 0;
+}
+.reaction:hover label {
+    opacity: 1;
 }
